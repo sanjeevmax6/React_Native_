@@ -123,12 +123,13 @@ class DropDownPicker extends Component {
           mode="dropdown"
             style={styles.picker}
             Label="Select"
-            onValueChange={this.changedOption}>
-            <Picker.Item label="USD" value="usd" />
-            <Picker.Item label="EUR" value="euro" />
-            <Picker.Item label="INR" value="india" />
-            <Picker.Item label="MYR" value="malaysia" />
-            <Picker.Item label="JPY" value="japan" />
+            onValueChange={this.changedOption}
+            selectedValue = {this.props.changedOption}>
+            <Picker.Item label="USD" value="usd" selectedValue = {this.option} />
+            <Picker.Item label="EUR" value="euro" selectedValue = {this.option}/>
+            <Picker.Item label="INR" value="india" selectedValue = {this.option}/>
+            <Picker.Item label="MYR" value="malaysia" selectedValue = {this.option} />
+            <Picker.Item label="JPY" value="japan" selectedValue = {this.option}/>
           </Picker>
         </View>
         <View style={styles.textInput}>
@@ -143,13 +144,14 @@ class DropDownPicker extends Component {
           <Picker
             style={styles.picker}
             Label="Select"
-            onValueChange={this.convertOption}>
+            onValueChange={this.convertOption}
+            selectedValue = {this.props.outputCurrency}>
             
-            <Picker.Item label="USD" value="usd" />
-            <Picker.Item label="EUR" value="euro" />
-            <Picker.Item label="INR" value="india" />
-            <Picker.Item label="MYR" value="malaysia" />
-            <Picker.Item label="JPY" value="japan" />
+            <Picker.Item label="USD" value="usd" selectedValue = {this.outputCountry} />
+            <Picker.Item label="EUR" value="euro" selectedValue = {this.outputCountry} />
+            <Picker.Item label="INR" value="india" selectedValue = {this.outputCountry} />
+            <Picker.Item label="MYR" value="malaysia" selectedValue = {this.outputCountry} />
+            <Picker.Item label="JPY" value="japan" selectedValue = {this.outputCountry} />
           </Picker>
         </View>
         <Text style={styles.textInput}>{this.state.outputCurrency}</Text>
